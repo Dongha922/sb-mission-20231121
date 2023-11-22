@@ -17,7 +17,7 @@ public class Question {
     @Id
     //데이터 구분을 위함.
     // JPA 에서 엔티티의 기본 키 값을 자동생성하는 방법을 지정하는 어노테이션.
-    // 엔터티를 데베에 저장시에 해당 엔터티의 기본 키 값을 자동 생성후 이를 데베의 ientity 컬럼에 의존해 할당
+    // 엔터티를 데베에 저장시에 해당 엔터티의 기본 키 값을 자동 생성후 이를 데베의 identity 컬럼에 의존해 할당
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     //질문의 고유번호

@@ -20,6 +20,7 @@ public class Answer {
     //답변 내용
     private LocalDateTime createDate;
     //답변 작성 일시
+    @ManyToOne
     private Question question;
     //어떤 질문에 대한 답변 인지 알기 위한 질문 속성
 
