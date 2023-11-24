@@ -5,6 +5,8 @@ import lombok.Generated;
 import lombok.Getter;
 import lombok.Setter;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.OneToMany;
 import java.util.List;
 
 @Getter

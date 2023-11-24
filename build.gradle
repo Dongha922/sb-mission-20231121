@@ -22,11 +22,16 @@ repositories {
 }
 
 dependencies {
+	//스프링부트웹
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	//룸북
 	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
+	//devtools
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	//test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	//h2
 	runtimeOnly 'com.h2database:h2'
 	// JPA
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
