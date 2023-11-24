@@ -6,11 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository //시도
-@AllArgsConstructor//시도2
-@Autowired//시도3
+//@Repository //시도
+//@AllArgsConstructor//시도2
+//@Autowired//시도3
 //public class AnswerRepository extends JpaRepository<Answer, Integer> { }
+public interface AnswerRepository extends JpaRepository<Answer, Integer> {
 
-public class AnswerRepository implements JpaRepository<Answer, Integer> {
+    // Bean -> Spring Container
+    // AnswerRepository 객체를 Spring Data JPA의 내부 로직을 이용해서 객체를 생성한 다음에 Spring Container에 등록해서 사용한다.
 
 }

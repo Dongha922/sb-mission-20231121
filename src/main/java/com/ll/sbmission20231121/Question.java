@@ -1,20 +1,23 @@
 package com.ll.sbmission20231121;
 
 import jakarta.persistence.*;
-import lombok.Generated;
-import lombok.Getter;
-import lombok.Setter;
+
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.OneToMany;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
-@Getter
-@Setter
-@Entity
+
 //JPA 가 엔티티로 인식한다.
 
-
+@Builder
+//@Getter
+//@Setter
+@Entity
 public class Question {
     @Id
     //데이터 구분을 위함.
@@ -29,7 +32,6 @@ public class Question {
     //질문의 제목
 
     @Column(columnDefinition = "TEXT")
-
     //테이블의 열과 매핑 시 정의를 지정하는 어노테이션 . 열의 정의를 "text"로 지정
     //      글자수 제한 두지 않음 .
     private String content;
@@ -39,4 +41,7 @@ public class Question {
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
     private List<Answer> answerList;
+
+
+
 }
