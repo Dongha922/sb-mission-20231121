@@ -1,11 +1,6 @@
 package com.ll.sbmission20231121;
-import com.ll.sbmission20231121.Answer;
-
-import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-import java.util.List;
+
 
 
 public interface AnswerRepository extends JpaRepository<Answer, Integer> {
