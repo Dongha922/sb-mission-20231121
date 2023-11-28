@@ -5,11 +5,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import java.util.List;
 
-//@Repository //시도
-//@AllArgsConstructor//시도2
-//@Autowired//시도3
-//public class AnswerRepository extends JpaRepository<Answer, Integer> { }
+
 public interface AnswerRepository extends JpaRepository<Answer, Integer> {
 
     // Bean -> Spring Container

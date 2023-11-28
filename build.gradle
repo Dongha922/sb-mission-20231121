@@ -22,31 +22,39 @@ repositories {
 }
 
 dependencies {
+
 	//스프링부트웹
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	//룸북
-//	compileOnly 'org.projectlombok:lombok'
-//	annotationProcessor 'org.projectlombok:lombok'
+
 	//devtools
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	//test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 	//h2
 	runtimeOnly 'com.h2database:h2'
 	// JPA
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	//구글링해서 추가한 jpa
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 
-	compileOnly 'org.projectlombok:lombok:1.18.30'
-	annotationProcessor 'org.projectlombok:lombok:1.18.30'
+//	compileOnly 'org.projectlombok:lombok:1.18.30'
+//	annotationProcessor 'org.projectlombok:lombok:1.18.30'
+//
+//	testCompileOnly 'org.projectlombok:lombok:1.18.30'
+//	testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
 
-	testCompileOnly 'org.projectlombok:lombok:1.18.30'
-	testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
 
 }
 
-tasks.named('bootBuildImage') {
-	builder = 'paketobuildpacks/builder-jammy-base:latest'
-}
+//tasks.named('bootBuildImage') {
+//	builder = 'paketobuildpacks/builder-jammy-base:latest'
+//}
 
 tasks.named('test') {
 	useJUnitPlatform()

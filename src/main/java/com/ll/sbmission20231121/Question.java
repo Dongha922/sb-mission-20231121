@@ -8,15 +8,17 @@ import jakarta.persistence.OneToMany;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 
 //JPA 가 엔티티로 인식한다.
 
-@Builder
-//@Getter
-//@Setter
+
+@Getter
+@Setter
 @Entity
 public class Question {
     @Id
@@ -36,7 +38,7 @@ public class Question {
     //      글자수 제한 두지 않음 .
     private String content;
     //질문의 내용
-    private  LockModeType createDate;
+    private LocalDateTime createDate;
     //질문을 작성한 일시
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
