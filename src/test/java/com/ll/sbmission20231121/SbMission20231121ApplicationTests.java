@@ -17,6 +17,15 @@ class SbMission20231121ApplicationTests {
 	//객체 주입 setter 대신 사용
 	private QuestionRepository questionRepository;
 
+//findAll
+	//: question 테이블 에 저장된 모든 데이터 조회 하기 위한 메소드
+	//데이터 사이즈가 2건인지. => assertEquals(기대값, 실제값) ? 테스트 성공 : 테스트 실패
+	//```void testJpa(){
+	//		List<Question> all = this.questionRepository.findAll();
+	//		assertEquals(2, all.size());
+	//		Question q= all.get(0);
+	//		assertEquals("sbb가 무엇인가요?", q.getSubject());
+
 //findByID 는 리턴 타입 X, Optional 임
 	//Optional 은 null 을 유연 하게 처리 하는 클래스
 	//isPresent 로 null 이 아님 get 으로 실제 Question 객체 값을 얻음.
@@ -29,14 +38,19 @@ class SbMission20231121ApplicationTests {
 	//스프링 이 자동 으로 QuestionRepository 객체 생성. 이때 프록시 패턴 사용됨.
 
 //findBySubjectAndContent
-	//QuestionRepository 에 객체 넣어주기
+	//QuestionRepository 에 객체 넣어 주기
 	//```Question findBySubjectAndContent(String subject, String content);```
-	//혼자해보기 성곧ㅇ ㅎㅎ
+	//혼자 해보기 성곧ㅇ ㅎㅎ
 
 //findBySubjectLike
 	//특정 문자열 포함된 데이터 조회
 	//QuestionRepository 에 객체 생성
-	//문자열로
+	//문자열 로
+	//```List<Question> findBySubjectLike(String subject);```
+	//```void testJpa(){
+	//			List<Question qList = this.questionRepository.findBySubjectLike("sbb%");
+	//			Question q = qList.get(0);
+	//			assertEquals("sbb가 무엇인가요?", q.getSubject());
 	@Test
 	void testJpa(){
 		List<Question> qList = this.questionRepository.findBySubjectLike("sbb%");
