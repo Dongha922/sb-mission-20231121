@@ -29,11 +29,20 @@ class SbMission20231121ApplicationTests {
 	//스프링 이 자동 으로 QuestionRepository 객체 생성. 이때 프록시 패턴 사용됨.
 
 //findBySubjectAndContent
-	//
+	//QuestionRepository 에 객체 넣어주기
+	//```Question findBySubjectAndContent(String subject, String content);```
+	//혼자해보기 성곧ㅇ ㅎㅎ
+
+//findBySubjectLike
+	//특정 문자열 포함된 데이터 조회
+	//QuestionRepository 에 객체 생성
+	//문자열로
 	@Test
 	void testJpa(){
-		Question q =this.questionRepository.findBySubjectAndContent("sbb가 무엇인가요?","sbb에 대해서 알고 싶습니다.");
-		assertEquals(1,q.getId());
+		List<Question> qList = this.questionRepository.findBySubjectLike("sbb%");
+		Question q = qList.get(0);
+		assertEquals("sbb가 무엇인가요?", q.getSubject());
+
 	}
 
 }
